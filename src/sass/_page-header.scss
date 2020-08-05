@@ -6,7 +6,82 @@
   @media screen and (minx-width: 481px) and (max-width: $tablet) {
     height: 680px;
     max-width: 609px;
+    margin-left: 159px;
   }
   @media screen and (minx-width: 769px) and (max-width: $desktop) {
+    height: 680px;
+    width: 1125px;
+    margin-left: 155px;
+  }
+}
+
+.section-header {
+  //   width: 100%;
+  @media screen and (minx-width: 769px) and (max-width: $desktop) {
+    // height: 680px;
+    width: 1280px;
+  }
+}
+
+// .navigate {
+//   @media screen and (minx-width: 769px) and (max-width: $desktop) {
+//     margin-top: 52px;
+//     margin-left: 40px;
+//   }
+//   @media screen and (minx-width: 481px) and (max-width: $tablet) {
+//     margin-top: 52px;
+//     margin-left: 24px;
+//   }
+// }
+
+.list {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+
+  & li {
+    @media screen and (minx-width: 769px) and (max-width: $desktop) {
+      margin-top: 52px;
+      margin-left: 40px;
+    }
+    @media screen and (minx-width: 481px) and (max-width: $tablet) {
+      margin-top: 52px;
+      margin-left: 24px;
+    }
+  }
+}
+
+.link-header {
+  font-family: $font-text;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+
+  color: $primory-white;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover,
+.link:focus {
+  outline: none;
+  color: $accent-orange;
+}
+
+.text-section-header {
+  margin-top: 208px;
+  margin-left: 31px;
+  @media screen and (minx-width: 769px) and (max-width: $desktop) {
+    margin-top: 204px;
+    margin-left: 100px;
+  }
+  @media screen and (minx-width: 481px) and (max-width: $tablet) {
+    margin-top: 204px;
+    margin-left: 120px;
   }
 }
