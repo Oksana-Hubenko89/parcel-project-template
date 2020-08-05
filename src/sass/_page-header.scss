@@ -1,0 +1,12 @@
+//Основной контейнер хедера
+.container-header {
+  @media screen and (max-width: $mobile) {
+    height: 580px;
+  }
+  @media screen and (minx-width: 481px) and (max-width: $tablet) {
+    height: 680px;
+    max-width: 609px;
+  }
+  @media screen and (minx-width: 769px) and (max-width: $desktop) {
+  }
+}
