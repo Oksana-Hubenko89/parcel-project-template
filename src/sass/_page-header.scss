@@ -11,7 +11,6 @@
   @media screen and (minx-width: 769px) and (max-width: $desktop) {
     height: 680px;
     width: 1125px;
-<<<<<<< Updated upstream
     margin-left: 155px;
   }
 }
@@ -84,35 +83,5 @@
   @media screen and (minx-width: 481px) and (max-width: $tablet) {
     margin-top: 204px;
     margin-left: 120px;
-=======
->>>>>>> Stashed changes
   }
-}
-
-.list {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-}
-
-.link-header {
-  font-family: $font-text;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.1em;
-
-  color: $primory-white;
-  text-decoration: none;
-  border: 1px solid transparent;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link:hover,
-.link:focus {
-  outline: none;
-  color: $accent-orange;
 }
