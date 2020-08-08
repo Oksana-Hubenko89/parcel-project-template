@@ -28,6 +28,6 @@
 
 .btn-dark-fone {
   @extend %btn;
-  background: transparent;
+  background-color: $primory-black;
   color: $primory-white;
 }
