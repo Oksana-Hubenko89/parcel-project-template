@@ -108,12 +108,17 @@ li {
 .email-link,
 .work-time-information {
   font-family: Open Sans;
-
   font-size: 18px;
   line-height: 1.67em;
   letter-spacing: 0.02em;
   color: #9da4bd;
 }
+
+.adress-link,
+.tel-link {
+text-decoration: none
+}
+
 .work-time-title {
   font-family: Open Sans;
   font-weight: 600;
