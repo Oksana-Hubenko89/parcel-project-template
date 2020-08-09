@@ -3,21 +3,22 @@ path {
   fill: inherit;
   stroke: inherit;
 }
-
-// .container-header {
-//   position: relative;
-//   @media screen and (min-width: 481px) and (max-width: $tablet) {
-//     margin-left: 159px;
-//   }
-//   @media screen and (min-width: 769px) {
-//     margin-left: 155px;
-//   }
-// }
+.centering {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 // Задний фон героя-хедера
+.container-header {
+  animation-duration: 10000ms;
+  animation-timing-function: linear;
+  animation-delay: 1000ms;
+  animation-iteration-count: infinite;
+}
 
 @media screen and (min-width: 769px) {
   .container-header {
+    animation-name: slide-back-img-desk;
     width: 1125px;
 
     height: 680px;
@@ -27,6 +28,7 @@ path {
       screen and (min-resolution: 2dppx) {
       & {
         background-image: url(../images/desktop/desktop-slider1@2x.jpg);
+        animation-name: slide-back-img-desk2;
       }
     }
   }
@@ -34,6 +36,7 @@ path {
 
 @media screen and (max-width: $mobile) {
   .container-header {
+    animation-name: slide-back-img-mob;
     width: 480px;
     height: 580px;
     background-image: url(../images/mobile/mobile-slider1@1x.jpg);
@@ -42,6 +45,7 @@ path {
       screen and (min-resolution: 2dppx) {
       & {
         background-image: url(../images/mobile/mobile-slider1@2x.jpg);
+        animation-name: slide-back-img-mob2;
       }
     }
   }
@@ -49,6 +53,7 @@ path {
 
 @media screen and (min-width: 481px) and (max-width: $tablet) {
   .container-header {
+    animation-name: slide-back-img-tabl;
     width: 609px;
     height: 680px;
     background-image: url(../images/tablet/tablet-slider1@1x.jpg);
@@ -57,6 +62,7 @@ path {
       screen and (min-resolution: 2dppx) {
       & {
         background-image: url(../images/tablet/tablet-slider1@2x.jpg);
+        animation-name: slide-back-img-tabl2;
       }
     }
   }
@@ -72,6 +78,7 @@ path {
   }
   @media screen and (min-width: 769px) {
     padding-left: 155px;
+    max-width: 1280px;
   }
 }
 
@@ -119,18 +126,18 @@ path {
 
 .list-item-header {
   display: block;
-  @media screen and (min-width: 481px) and (max-width: $tablet) {
-    margin-top: 52px;
-    margin-left: 24px;
-  }
-  @media screen and (min-width: 769px) and (max-width: 1280px) {
-    margin-top: 52px;
-    margin-left: 40px;
-  }
   @media screen and (max-width: $mobile) {
     &:not(:last-child) {
       margin-bottom: 24px;
     }
+  }
+  @media screen and (min-width: 481px) and (max-width: $tablet) {
+    margin-top: 52px;
+    margin-left: 24px;
+  }
+  @media screen and (min-width: 769px) {
+    margin-top: 52px;
+    margin-left: 40px;
   }
 }
 
@@ -146,7 +153,6 @@ path {
     margin-right: 40px;
   }
 }
-
 .link-header {
   font-family: $font-text;
   font-style: normal;
@@ -158,9 +164,7 @@ path {
   color: $primory-white;
   text-decoration: none;
   border: 1px solid transparent;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color $trans-time-and-bezier;
   @media screen and (max-width: $mobile) {
     font-size: 18px;
     line-height: 1.39;
@@ -210,8 +214,8 @@ path {
   display: inline-block;
   margin: 0;
   padding: 0;
+  font-weight: normal;
 
-  // font-family: font-text;
   font-size: 16px;
   line-height: 1.62;
   color: $primory-text-color-dark-fone;
@@ -255,18 +259,16 @@ path {
 
 .soc-header {
   @media screen and (max-width: $mobile) {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
+    display: block;
     margin-top: 64px;
+    margin-left: 100px;
   }
   @media screen and (min-width: 481px) {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     position: absolute;
     left: 76px;
-    bottom: 40px;
+    bottom: 140px;
     transform: rotate(-90deg);
     transform-origin: left;
   }
@@ -275,24 +277,19 @@ path {
   }
 }
 
-.instagram-cont {
-  display: flex;
-  align-items: center;
-}
-
 .line {
-  margin-right: 40px;
-  fill: $primory-black;
-}
-
-.header-tube {
-  @media screen and (max-width: $mobile) {
-    display: block;
-    margin-left: 100px;
-    margin-top: 24px;
-  }
   @media screen and (min-width: 481px) {
-    margin-left: 40px;
+    margin-right: 40px;
+  }
+  &::before {
+    content: '';
+    display: block;
+    margin-left: -100px;
+    margin-bottom: -10px;
+
+    width: 60px;
+    height: 1px;
+    background: $translucent-text-dark-fone;
   }
 }
 
@@ -301,9 +298,7 @@ path {
   text-decoration: none;
   border: 1px solid transparent;
   color: $primory-black;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color $trans-time-and-bezier;
 
   @media screen and (max-width: $mobile) {
     font-family: $font-text;
@@ -324,7 +319,6 @@ path {
   }
 }
 
-
 .button-slide {
   @media screen and (max-width: $mobile) {
     display: none;
@@ -343,7 +337,7 @@ path {
 }
 
 .slide-bottom:not(:first-child) {
-  margin-left: 40px;
+  margin-left: 26px;
   // margin-top: auto;
 }
 .slide-bottom {
@@ -351,22 +345,129 @@ path {
   background-color: transparent;
   border-style: none;
   color: $translucent-text-dark-fone;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  transition: color $trans-time-and-bezier;
+
+  &::after {
+    content: '';
+    display: block;
+    margin-top: 8px;
+    width: 60px;
+    height: 1px;
+    background: $translucent-text-dark-fone;
+    &:hover,
+    &:focus {
+      background: $primory-white;
+    }
+  }
 
   &:hover,
   &:focus {
     color: $primory-white;
   }
+
+  &.first {
+    text-align: start;
+  }
+  &.second {
+    text-align: end;
+  }
 }
 
-.line-with-text {
-  display: flex;
-  align-items: center;
-  color: $translucent-text-dark-fone;
-  font-size: 11px;
-  line-height: 1.36;
-  fill: $translucent-text-dark-fone;
-}
+// анимация бекграунда animation-duration: 3000ms;
+@keyframes slide-back-img-desk {
+  0% {
+    background-image: url(../images/desktop/desktop-slider1@1x.jpg);
+  }
 
+  33% {
+    background-image: url(../images/desktop/desktop-slider2@1x.jpg);
+  }
+
+  66% {
+    background-image: url(../images/desktop/desktop-slider3@1x.jpg);
+  }
+  100% {
+    background-image: url(../images/desktop/desktop-slider1@1x.jpg);
+  }
+}
+@keyframes slide-back-img-desk2 {
+  0% {
+    background-image: url(../images/desktop/desktop-slider1@2x.jpg);
+  }
+
+  33% {
+    background-image: url(../images/desktop/desktop-slider2@2x.jpg);
+  }
+
+  66% {
+    background-image: url(../images/desktop/desktop-slider3@2x.jpg);
+  }
+  100% {
+    background-image: url(../images/desktop/desktop-slider1@2x.jpg);
+  }
+}
+@keyframes slide-back-img-tabl {
+  0% {
+    background-image: url(../images/tablet/tablet-slider1@1x.jpg);
+  }
+
+  33% {
+    background-image: url(../images/tablet/tablet-slider2@1x.jpg);
+  }
+
+  66% {
+    background-image: url(../images/tablet/tablet-slider3@1x.jpg);
+  }
+  100% {
+    background-image: url(../images/tablet/tablet-slider1@1x.jpg);
+  }
+}
+@keyframes slide-back-img-tabl2 {
+  0% {
+    background-image: url(../images/tablet/tablet-slider1@2x.jpg);
+  }
+
+  33% {
+    background-image: url(../images/tablet/tablet-slider2@2x.jpg);
+  }
+
+  66% {
+    background-image: url(../images/tablet/tablet-slider3@2x.jpg);
+  }
+  100% {
+    background-image: url(../images/tablet/tablet-slider1@2x.jpg);
+  }
+}
+@keyframes slide-back-img-mob {
+  0% {
+    background-image: url(../images/mobile/mobile-slider1@1x.jpg);
+  }
+
+  33% {
+    background-image: url(../images/mobile/mobile-slider2@1x.jpg);
+  }
+
+  66% {
+    background-image: url(../images/mobile/mobile-slider3@1x.jpg);
+  }
+  100% {
+    background-image: url(../images/mobile/mobile-slider1@1x.jpg);
+  }
+}
+@keyframes slide-back-img-mob2 {
+  0% {
+    background-image: url(../images/mobile/mobile-slider1@2x.jpg);
+  }
+
+  33% {
+    background-image: url(../images/mobile/mobile-slider2@2x.jpg);
+  }
+
+  66% {
+    background-image: url(../images/mobile/mobile-slider3@2x.jpg);
+  }
+  100% {
+    background-image: url(../images/mobile/mobile-slider1@2x.jpg);
+  }
+}
