@@ -71,4 +71,8 @@
 
 .mobile-menu-button.is-open .icon-menu {
   display: none;
+  color: $primory-white;
+}
+.icon-menu {
+  fill: $primory-white;
 }
